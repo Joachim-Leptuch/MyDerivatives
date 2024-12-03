@@ -128,6 +128,7 @@ params_check = True  # Assume all parameters are valid initially
 
 for k, v in params.items():
     if v == 0 or v == "":
+        st.write(k)
         if k == 'Div':  # Allow 'Div' to be 0
             continue
         params_check = False
