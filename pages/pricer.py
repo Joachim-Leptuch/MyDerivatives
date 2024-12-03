@@ -31,7 +31,7 @@ underlyings = {
 # Correspondances ticker broker
 
 # PRICER
-st.title('Derivatives Pricer')
+st.title('Options Pricer')
 
 characteristics, parameters_col = st.columns(2)
 
