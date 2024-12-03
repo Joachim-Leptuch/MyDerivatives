@@ -126,8 +126,8 @@ params = {new_key: parameters[old_key] for old_key, new_key in paramValuesDict.i
 params_check = False
 
 # Check params
-for v in params.values():
-    if v == 0 or v == "":
+for k, v in params.items():
+    if v == 0 or v == "" and k != 'Div':
         params_check = False
         break
     else:
