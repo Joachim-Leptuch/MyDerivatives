@@ -127,7 +127,9 @@ params_check = False
 
 # Check params
 for k, v in params.items():
-    if v == 0 or v == "" and k != 'Div':
+    if v == 0 or v == "":
+        if k == 'Div':
+            continue
         params_check = False
         break
     else:
