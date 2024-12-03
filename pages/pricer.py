@@ -50,8 +50,14 @@ exercise_style = characteristics.selectbox("What should be the exercise style?",
 
 # Get target stock yahoo price
 ticker = underlyings['SP500'][stock]
-price = yf.Ticker(ticker).history(period='1d')['Close'].iloc[0]
-div_yield = yf.Ticker(ticker).info.get('dividendYield') * 100
+ticker_tf = yf.Ticker(ticker)
+
+price = ticker_tf.history(period='1d')['Close'].iloc[0]
+try:
+    div_yield = ticker_tf.info.get('dividendYield') * 100
+except:
+    div_yield = 0
+
 risk_free = yf.Ticker('^TNX').history(period='1d')['Close'].iloc[0]
 
 # Parameters
