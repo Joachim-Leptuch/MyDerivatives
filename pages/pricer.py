@@ -123,17 +123,15 @@ if secondary_factor:
 
 # Prepare params
 params = {new_key: parameters[old_key] for old_key, new_key in paramValuesDict.items() if old_key in parameters}
-params_check = False
 
-# Check params
+params_check = True  # Assume all parameters are valid initially
+
 for k, v in params.items():
     if v == 0 or v == "":
-        if k == 'q': # Div can be 0
+        if k == 'Div':  # Allow 'Div' to be 0
             continue
         params_check = False
-        break
-    else:
-        params_check = True
+        break  # Stop checking further as one invalid parameter is enough
 
 if params_check:
 
