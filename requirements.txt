@@ -1,1 +1,5 @@
-pip~=23.2.1
+pip
+matplotlib
+pandas
+scipy
+yfinance
