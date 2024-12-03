@@ -56,7 +56,7 @@ price = ticker_tf.history(period='1d')['Close'].iloc[0]
 try:
     div_yield = ticker_tf.info.get('dividendYield') * 100
 except:
-    div_yield = 0
+    div_yield = 0.00
 
 risk_free = yf.Ticker('^TNX').history(period='1d')['Close'].iloc[0]
 
