@@ -197,9 +197,10 @@ if params_check:
         plt.title(f"{risk} as function of {primary_factor}",  fontsize=14)
         plt.xlabel(f"{primary_factor}", fontsize=12)
         plt.ylabel(f"{risk}",  fontsize=12)
+        plt.plot(target_values)
 
         plt.tight_layout()
-        plt.show()
+        # plt.show()
 
         # st.line_chart(target_values)
 
