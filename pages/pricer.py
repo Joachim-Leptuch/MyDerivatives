@@ -1,3 +1,11 @@
+# Setting Page Title, Page Icon and Layout Size
+st.set_page_config(
+    page_title='Option Pricer',
+    #page_icon=faviconPath,
+    layout='wide',
+    initial_sidebar_state="expanded"
+)
+
 from matplotlib import pyplot as plt
 import streamlit as st
 import yfinance as yf
@@ -7,14 +15,6 @@ import datetime
 from modules import BSM
 from data import tickers
 from utils import utils_pricing as utils
-
-# Setting Page Title, Page Icon and Layout Size
-st.set_page_config(
-    page_title='Option Pricer',
-    #page_icon=faviconPath,
-    layout='wide',
-    initial_sidebar_state="expanded"
-)
 
 # Initilize application
 days_year = 365
