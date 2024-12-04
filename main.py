@@ -8,7 +8,6 @@ st.set_page_config(
 )
 
 ### ---- PAGE SETUP ----
-
 pricer_page = st.Page(
     page = "pages/pricer.py",
     title = "Options Pricer",
