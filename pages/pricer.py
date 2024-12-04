@@ -196,7 +196,6 @@ if params_check:
         fig = plt.figure()
         plt.plot(target_values, label=f'{risk} as function of {primary_factor}')
         plt.grid(color='gray', linestyle='--', linewidth=0.5, alpha=0.5)
-        plt.title(f"{risk} as function of {primary_factor}", fontsize=14)  # Fixed: Changed `ax.title` to `ax.set_title`
         plt.xlabel(f"{primary_factor}", fontsize=12)  # Fixed: Changed `ax.xlabel` to `ax.set_xlabel`
         plt.ylabel(f"{risk}", fontsize=12)  # Fixed: Changed `ax.ylabel` to `ax.set_ylabel`
         plt.legend()  # Add a legend for clarity
