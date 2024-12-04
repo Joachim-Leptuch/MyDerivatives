@@ -8,6 +8,14 @@ from modules import BSM
 from data import tickers
 from utils import utils_pricing as utils
 
+# Setting Page Title, Page Icon and Layout Size
+st.set_page_config(
+    page_title='Option Pricer',
+    #page_icon=faviconPath,
+    layout='wide',
+    initial_sidebar_state="expanded"
+)
+
 # Initilize application
 days_year = 365
 performed_pricing = False
