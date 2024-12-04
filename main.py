@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title='Option Pricer',
+    page_title='Options Pricer',
     page_icon="⚛",
     layout='centered',
     initial_sidebar_state="expanded"
