@@ -1,3 +1,5 @@
+import streamlit as st
+
 # Setting Page Title, Page Icon and Layout Size
 st.set_page_config(
     page_title='Option Pricer',
@@ -7,7 +9,6 @@ st.set_page_config(
 )
 
 from matplotlib import pyplot as plt
-import streamlit as st
 import yfinance as yf
 import pandas as pd
 import datetime
