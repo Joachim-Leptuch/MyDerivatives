@@ -33,7 +33,7 @@ underlyings = {
 # PRICER
 st.title('Options Pricer')
 
-body = "The underlying price, dividend, and interest rate variables are updated according to the symbol entered."
+body = "The underlying price, dividend, and interest rate variables are automatically updated."
 st.caption(body, unsafe_allow_html=False)
 
 characteristics, parameters_col = st.columns(2)
