@@ -192,7 +192,15 @@ if params_check:
             first_factor_lin_space *= days_year
 
         st.subheader(f"{risk} as function of {primary_factor}")
-        st.line_chart(target_values)
+
+        plt.grid(color='gray', linestyle='--', linewidth=0.5, alpha=0.5)
+        plt.title(f"{risk} as function of {primary_factor}",  fontsize=14)
+        plt.xlabel(f"{primary_factor}", fontsize=12)
+        plt.ylabel(f"{risk}",  fontsize=12)
+
+        plt.tight_layout()
+
+        #st.line_chart(target_values)
 
     if secondary_factor is not None and not target_values.empty: # 3D Surface
 
