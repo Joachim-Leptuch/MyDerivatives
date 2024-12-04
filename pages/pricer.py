@@ -1,13 +1,11 @@
-import streamlit as st
-
-# Setting Page Title, Page Icon and Layout Size
-st.set_page_config(
+streamlit.set_page_config(
     page_title='Option Pricer',
     #page_icon=faviconPath,
     layout='wide',
     initial_sidebar_state="expanded"
 )
 
+import streamlit as st
 from matplotlib import pyplot as plt
 import yfinance as yf
 import pandas as pd
