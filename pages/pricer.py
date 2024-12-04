@@ -199,6 +199,7 @@ if params_check:
         plt.ylabel(f"{risk}",  fontsize=12)
 
         plt.tight_layout()
+        plt.show()
 
         # st.line_chart(target_values)
 
