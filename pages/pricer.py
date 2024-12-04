@@ -1,4 +1,4 @@
-streamlit.set_page_config(
+set_page_config(
     page_title='Option Pricer',
     #page_icon=faviconPath,
     layout='wide',
