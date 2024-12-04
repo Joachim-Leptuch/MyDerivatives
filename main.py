@@ -26,5 +26,7 @@ linkedin_url = "https://www.linkedin.com/in/joachim-l-954610212/"
 st.sidebar.write("Linkedin : [Joachim Leptuch](%s)" % linkedin_url)
 st.sidebar.write("Contact : joachim.leptuch@edu.escp.eu")
 
+st.sidebar.caption("May the volatility be with you.")
+
 ### ---- RUN NAVIGATION ----
 pg.run()
