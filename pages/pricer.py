@@ -193,13 +193,13 @@ if params_check:
 
         st.subheader(f"{risk} as function of {primary_factor}")
 
-        fig, ax = plt.subplots()
-        ax.plot(target_values, label=f'{risk} as function of {primary_factor}')
-        ax.grid(color='gray', linestyle='--', linewidth=0.5, alpha=0.5)
-        ax.set_title(f"{risk} as function of {primary_factor}", fontsize=14)  # Fixed: Changed `ax.title` to `ax.set_title`
-        ax.set_xlabel(f"{primary_factor}", fontsize=12)  # Fixed: Changed `ax.xlabel` to `ax.set_xlabel`
-        ax.set_ylabel(f"{risk}", fontsize=12)  # Fixed: Changed `ax.ylabel` to `ax.set_ylabel`
-        ax.legend()  # Add a legend for clarity
+        fig = plt.figure()
+        plt.plot(target_values, label=f'{risk} as function of {primary_factor}')
+        plt.grid(color='gray', linestyle='--', linewidth=0.5, alpha=0.5)
+        plt.title(f"{risk} as function of {primary_factor}", fontsize=14)  # Fixed: Changed `ax.title` to `ax.set_title`
+        plt.xlabel(f"{primary_factor}", fontsize=12)  # Fixed: Changed `ax.xlabel` to `ax.set_xlabel`
+        plt.ylabel(f"{risk}", fontsize=12)  # Fixed: Changed `ax.ylabel` to `ax.set_ylabel`
+        plt.legend()  # Add a legend for clarity
         plt.tight_layout()  # Fixed: Use `plt.tight_layout` at the figure level
         st.pyplot(fig)
 
