@@ -193,14 +193,17 @@ if params_check:
 
         st.subheader(f"{risk} as function of {primary_factor}")
 
-        plt.grid(color='gray', linestyle='--', linewidth=0.5, alpha=0.5)
-        plt.title(f"{risk} as function of {primary_factor}",  fontsize=14)
-        plt.xlabel(f"{primary_factor}", fontsize=12)
-        plt.ylabel(f"{risk}",  fontsize=12)
-        plt.plot(target_values)
+        fig, ax = plt.subplots()
+        ax.plot(target_values)
+        ax.grid(color='gray', linestyle='--', linewidth=0.5, alpha=0.5)
+        ax.title(f"{risk} as function of {primary_factor}",  fontsize=14)
+        ax.xlabel(f"{primary_factor}", fontsize=12)
+        ax.ylabel(f"{risk}",  fontsize=12)
+        ax.plot(target_values)
 
-        plt.tight_layout()
-        # plt.show()
+        ax.tight_layout()
+
+        st.pyplot(fig)
 
         # st.line_chart(target_values)
 
