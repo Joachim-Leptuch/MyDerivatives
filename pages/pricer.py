@@ -120,6 +120,8 @@ first_param_range = primary_factors.number_input('Parameter range.', value=0.20,
 if secondary_factor and secondary_factor != 'Maturity':
     second_param_range = secondary_factors.number_input('Parameter range.', value=0.20, step=0.01, max_value=0.99,
                                                         min_value=0.1, key="#P2R")
+else:
+    second_param_range = 1
 
 # Prepare params
 params = {new_key: parameters[old_key] for old_key, new_key in paramValuesDict.items() if old_key in parameters}
