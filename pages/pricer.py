@@ -125,7 +125,7 @@ secondary_factor = secondary_factors.selectbox("Choose the second factor",
 
 risk_granularity = risks.number_input('Granularity.', value=30, step=1, max_value=100, min_value=1)
 
-first_param_range = primary_factors.number_input('Parameter range.', value=0.20, step=0.01, max_value=0.99,
+first_param_range = primary_factors.number_input('Parameter range.', value=0.90, step=0.01, max_value=0.99,
                                                  min_value=0.1, key="#P1R")
 if secondary_factor and secondary_factor != 'Maturity':
     second_param_range = secondary_factors.number_input('Parameter range.', value=0.20, step=0.01, max_value=0.99,

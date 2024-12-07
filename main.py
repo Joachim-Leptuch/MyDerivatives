@@ -21,7 +21,7 @@ pg = st.navigation({
 # ---- SHARED ON ALL PAGES ----
 # st.logo("link")
 st.sidebar.text("Created by Joachim Leptuch.")
-linkedin_url = "https://www.linkedin.com/in/joachim-l-954610212/"
+linkedin_url = "https://www.linkedin.com/in/joachim-leptuch/"
 
 st.sidebar.write("Linkedin : [Joachim Leptuch](%s)" % linkedin_url)
 st.sidebar.write("Contact : joachim.leptuch@edu.escp.eu")
