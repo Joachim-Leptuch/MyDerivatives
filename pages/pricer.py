@@ -1,5 +1,5 @@
-from matplotlib import pyplot as plt
 import streamlit as st
+from matplotlib import pyplot as plt
 import yfinance as yf
 import pandas as pd
 import datetime
@@ -33,6 +33,9 @@ underlyings = {
 
 # PRICER
 st.title('Options Pricer')
+
+body = "The underlying price, dividend, and interest rate variables are automatically updated."
+st.caption(body, unsafe_allow_html=False)
 
 characteristics, parameters_col = st.columns(2)
 
@@ -123,11 +126,13 @@ secondary_factor = secondary_factors.selectbox("Choose the second factor",
 
 risk_granularity = risks.number_input('Granularity.', value=30, step=1, max_value=100, min_value=1)
 
-first_param_range = primary_factors.number_input('Parameter range.', value=0.20, step=0.01, max_value=0.99,
+first_param_range = primary_factors.number_input('Parameter range.', value=0.90, step=0.01, max_value=0.99,
                                                  min_value=0.1, key="#P1R")
-if secondary_factor:
-    second_param_range = secondary_factors.number_input('Parameter range.', value=0.20, step=0.01, max_value=0.99,
+if secondary_factor and secondary_factor != 'Maturity':
+    second_param_range = secondary_factors.number_input('Parameter range.', value=0.50, step=0.01, max_value=0.99,
                                                         min_value=0.1, key="#P2R")
+else:
+    second_param_range = 1
 
 # Prepare params
 params = {new_key: parameters[old_key] for old_key, new_key in paramValuesDict.items() if old_key in parameters}
@@ -200,7 +205,17 @@ if params_check:
             first_factor_lin_space *= days_year
 
         st.subheader(f"{risk} as function of {primary_factor}")
-        st.line_chart(target_values)
+
+        fig = plt.figure()
+        plt.plot(target_values, label=f'{risk} as function of {primary_factor}')
+        plt.grid(color='gray', linestyle='--', linewidth=0.5, alpha=0.5)
+        plt.xlabel(f"{primary_factor}", fontsize=12)  # Fixed: Changed `ax.xlabel` to `ax.set_xlabel`
+        plt.ylabel(f"{risk}", fontsize=12)  # Fixed: Changed `ax.ylabel` to `ax.set_ylabel`
+        plt.legend()  # Add a legend for clarity
+        plt.tight_layout()  # Fixed: Use `plt.tight_layout` at the figure level
+        st.pyplot(fig)
+
+        # st.line_chart(target_values)
 
     if secondary_factor is not None and not target_values.empty: # 3D Surface
 
