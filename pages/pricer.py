@@ -3,6 +3,7 @@ import streamlit as st
 import yfinance as yf
 import pandas as pd
 import datetime
+import lxml
 
 from modules import BSM
 from data import tickers
@@ -93,10 +94,17 @@ def price_option(parameters, option_type, exercise_style):
 if not st.button("Price"):
     pass
 else:
-    option_price = price_option(parameters, option_type, exercise_style)
-    performed_pricing = True
+    if not all(parameters):
+        st.write("Please input all required parameters to price the option.")
+        st.write("Missing/Invalid Parameters:", [p for p in parameters if not p])
+    elif parameters['Spot'] == 0 or parameters['Strike'] == 0 or parameters['Maturity'] == 0 :
+        st.write("The specified maturity, sport or strike is 0. Input higher value.")
+    else:
 
-    st.write("The price for the ", exercise_style, option_type, "on ", stock, "is ", round(option_price, 3), "$.")
+        option_price = price_option(parameters, option_type, exercise_style)
+        st.write(f"The price for the {exercise_style} {option_type} on {stock} is {round(option_price, 3)} $.")
+
+        performed_pricing = True
 
 # Sensitivities modelling
 st.title('Greeks Modelling')
