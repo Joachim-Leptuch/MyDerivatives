@@ -58,7 +58,7 @@ ticker_tf = yf.Ticker(ticker)
 
 price = ticker_tf.history(period='1d')['Close'].iloc[0]
 try:
-    div_yield = ticker_tf.info.get('dividendYield') * 100
+    div_yield = ticker_tf.info.get('dividendYield')
 except:
     div_yield = 0.00
 
